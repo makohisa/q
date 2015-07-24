@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="あばばば">
+        <title>Q-core & Mac environments</title>        
+        <!-- Include *at least* the core style and default theme -->
+        <link href="css/screen.css" rel="stylesheet" media="screen">
+        <link id="style" href="../css/clean.css" rel="stylesheet" media="screen">
+         <!-- Include required JS files -->
+    </head>
+    <body>
+        <header>
+            <h1>Qcore & Mac environments</h1>
+        </header>
+        <section>
+            <h2>Q-core environments</h2>
+            <div id="qcoreenv"></div>
+        </section>
+        <section>
+            <h2>Mac environments</h2>
+            <div id="macenv"></div>
+            <div id="macenv2"></div>
+        </section>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../js/jquery.columns.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            var dt = [
+                    {'Emp. Number': 00001, 'First Name':'John', 'Last Name':'Smith' },
+                    {'Emp. Number': 00002, 'First Name':'Jane', 'Last Name':'Doe' },
+                    {'Emp. Number': 00003, 'First Name':'Ted', 'Last Name':'Johnson' },
+                    {'Emp. Number': 00004, 'First Name':'Betty', 'Last Name':'Smith' },
+                    {'Emp. Number': 00005, 'First Name':'Susan', 'Last Name':'Wilson' },
+                    {'Emp. Number': 00006, 'First Name':'John', 'Last Name':'Doe' },
+                    {'Emp. Number': 00007, 'First Name':'Bill', 'Last Name':'Watson' },
+                    {'Emp. Number': 00008, 'First Name':'Walter', 'Last Name':'Wright' }
+            ];
+            $('#qcoreenv').columns({
+                data:dt
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $.getJSON("file:///Network/Servers/macmini00.quadrac.jp/Users/qi_hisanaga/Downloads/eisenbraun-columns-4fbc3a8/examples/data.json", function(json){
+                $('#macenv').columns({
+                    data:json
+                });
+            });
+        });
+        </script>   
+    </body>
+</html>
